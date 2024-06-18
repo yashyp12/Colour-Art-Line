@@ -108,3 +108,34 @@ if (document.getElementsByClassName('clean-gallery').length > 0) {
 
 // 
  
+
+// contact form js 
+
+ 
+
+ 
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select the form
+        const form = document.getElementById('contact-form');
+
+        // Add submit event listener
+        form.addEventListener('submit', function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // You can perform additional form validation here if needed
+
+            // Display SweetAlert confirmation
+            Swal.fire({
+                icon: 'success',
+                title: 'Message Sent!',
+                text: 'We will get back to you soon.',
+                showConfirmButton: false,
+                timer: 2000 // Close alert after 2 seconds
+            });
+
+            // Optional: You can reset the form after submission
+            form.reset();
+        });
+    });
+ 
