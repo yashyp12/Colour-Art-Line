@@ -111,31 +111,63 @@ if (document.getElementsByClassName('clean-gallery').length > 0) {
 
 // contact form js 
 
- 
+// document.getElementById('contact-form').addEventListener('submit', async (event) => {
+//     event.preventDefault();
+  
+//     const formData = {
+//       name: event.target.name.value,
+//       email: event.target.email.value,
+//       subject: event.target.subject.value,
+//       message: event.target.message.value
+//     };
+  
+//     try {
+//       const response = await fetch('/api/contacts', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(formData)
+//       });
+  
+//       if (response.ok) {
+//         alert('Message sent successfully');
+//         event.target.reset();
+//       } else {
+//         alert('Failed to send message');
+//       }
+//     } catch (error) {
+//       console.error(error);
+//       alert('An error occurred');
+//     }
+//   });
 
- 
-    document.addEventListener('DOMContentLoaded', function () {
-        // Select the form
-        const form = document.getElementById('contact-form');
 
-        // Add submit event listener
-        form.addEventListener('submit', function (event) {
-            // Prevent the default form submission
-            event.preventDefault();
 
-            // You can perform additional form validation here if needed
 
-            // Display SweetAlert confirmation
-            Swal.fire({
-                icon: 'success',
-                title: 'Message Sent!',
-                text: 'We will get back to you soon.',
-                showConfirmButton: false,
-                timer: 2000 // Close alert after 2 seconds
-            });
 
-            // Optional: You can reset the form after submission
-            form.reset();
-        });
-    });
+  
+  
+//   adding functionality to fetch and display gallery items 
+
+  async function fetchGalleryItems() {
+    try {
+      const response = await fetch('/api/gallery');
+      const items = await response.json();
+  
+      const galleryContainer = document.getElementById('gallery-container');
+      galleryContainer.innerHTML = items.map(item => `
+        <div class="card">
+          <img src="${item.imageUrl}" class="card-img-top" alt="${item.title}">
+          <div class="card-body">
+            <h5 class="card-title">${item.title}</h5>
+            <p class="card-text">${item.description}</p>
+          </div>
+        </div>
+      `).join('');
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', fetchGalleryItems);
+  
  
