@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-  <title>Art-Gallery</title>
+  <title>Art-Gallery - Colour Line Art</title>
   <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=9f3738c3b02e0983f8d5f3b19c8cdd33" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap" />
@@ -305,7 +305,7 @@
   <!-- Start: ♣ Filterable Gallery with Lightbox BS4 ♣ -->
   <section class="py-5">
     <div class="container">
-      <br /><br />
+      <br /><br /><br>
       <h1 class="text-center"><strong>Our Arts Gallery</strong></h1>
       <!-- <p class="text-center">You can view instructions <a href="http://imagia-mu.com/DEV/BS/filterable-gallery/" target="_blank">here</a></p>  -->
       <div class="row">
@@ -326,14 +326,24 @@
       </div>
       
       <!-- End: Search Input Responsive with Icon -->
-      <!-- Start: filter controls -->
       <div class="filtr-controls">
-        <span class="active" data-filter="all">all </span>
-        <span data-filter="1">category 1 </span>
-        <span data-filter="2">category 2 </span>
-          <span data-filter="3">category 3 </span>
-      </div>
-      <!-- End: filter controls -->
+        <span class="active" data-filter="all">all</span>
+        <span data-filter="1">Number Plates</span>
+        <span data-filter="2">Name Plate</span>
+        <span data-filter="3">Vinyl</span>
+        <span data-filter="4">Board Painting</span>
+        <span data-filter="5">Acrylic Board</span>
+        <span data-filter="6">Acrylic Board</span>
+        <span data-filter="7">Acrylic Board</span>
+
+        <!-- Arrow icon for scrolling next category -->
+        <div class="arrow-icon" id="nextCategory">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M8.6 7.41l2.83-2.83 6.36 6.36-6.36 6.36-2.83-2.83 3.53-3.53-3.53-3.53z"/>
+            </svg>
+        </div>
+    </div>
+    
 
 
       <div class="row filtr-container">
@@ -489,6 +499,51 @@
   document.addEventListener('DOMContentLoaded', fetchGalleryItems);
 </script> -->
 
+<script>
+  
+document.addEventListener('DOMContentLoaded', function() {
+    const categories = document.querySelectorAll('.filtr-controls > span');
+    const arrowContainer = document.getElementById('arrowContainer');
+    const arrowIcon = createArrowIcon(); // Function to create arrow icon
+
+    let currentIndex = 0;
+
+    // Initially show the first four categories
+    for (let i = 0; i < 3; i++) {
+        categories[i].style.display = 'inline';
+    }
+
+    // Function to create arrow icon
+    function createArrowIcon() {
+        const arrowDiv = document.createElement('div');
+        arrowDiv.classList.add('arrow-icon');
+        arrowDiv.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M8.6 7.41l2.83-2.83 6.36 6.36-6.36 6.36-2.83-2.83 3.53-3.53-3.53-3.53z"/>
+            </svg>
+        `;
+        arrowDiv.addEventListener('click', function() {
+            hideAllCategories();
+            currentIndex = (currentIndex + 1) % categories.length;
+            categories[currentIndex].style.display = 'inline';
+        });
+        return arrowDiv;
+    }
+
+    // Append arrow icon to the arrowContainer
+    arrowContainer.appendChild(arrowIcon);
+
+    // Function to hide all categories
+    function hideAllCategories() {
+        for (let i = 0; i < categories.length; i++) {
+            categories[i].style.display = 'none';
+        }
+    }
+});
+</script>
+
+
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
 <script src="./assets/js/-Filterable-Gallery-with-Lightbox-BS4--Filterable-Gallery.js"></script>

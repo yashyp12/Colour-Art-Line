@@ -4,15 +4,65 @@
    
 }
 
-
+/* 
 .clean-block.clean-hero {
     color: var(--bs-border-color-translucent);
     background: url("/assets/img/g4931f5738e84a370e746fd961cd8985ffec6706cf8396dabf84098a533925e0675ababc75c84a280c36feaf0afa90d0cf4cbb5f5be333dc03d69b528bbf09b2d_640.jpg?h=505a01552beb0675f6158323d8dd4e41") center / cover no-repeat;
+} */
+.clean-block.clean-hero {
+  position: relative;
+  color: var(--bs-border-color-translucent);
+  overflow: hidden; /* Ensure video doesn't overflow */
+  height: 100vh; /* Set the hero section height to full viewport height */
+}
+
+#video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the area */
+  z-index: -1; /* Behind the text content */
 }
 
 .clean-block.clean-hero .text {
-    height: 553px;
+  position: relative; /* Ensures text stays above video */
+  z-index: 1; /* Above the video */
+  padding: 20px; /* Adjust padding as needed */
+  text-align: center; /* Center align text */
+  color: white; /* Text color */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Take full height of .clean-block.clean-hero */
 }
+
+@media (max-width: 768px) {
+  .clean-block.clean-hero {
+      height: auto; /* Allow height to adjust based on content */
+      min-height: 100vh; /* Ensure at least full viewport height */
+  }
+
+  #video-background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: cover; /* Ensure the video covers the area */
+  }
+
+  .clean-block.clean-hero .text {
+      padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+
+
 
 .clean-block.clean-hero h3 {
     font-family: Montserrat, sans-serif;
