@@ -21,6 +21,82 @@
     <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css?h=c50b25e167715b86a4188d609eba7fb5" />
     <link rel="stylesheet" href="/assets/css/styles.min.css?h=aa59aaa2e5bf70d332c88f1fab369198" />
     <link rel="stylesheet" href="./style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+
+
+    <style>
+  /* .clean-block.clean-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video-background,
+#video-background-mobile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transform: translate(-50%, -50%);
+}
+
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;  
+}
+
+.text-container h1 {
+    font-size: 5vw;  
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+    
+}
+
+ 
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+} */ */
+
+/* Mobile Styles */
+/* @media (max-width: 768px) {
+    .text-container {
+        display: none;  
+    }
+} */
+
+    </style>
 </head>
 
 <body>
@@ -63,15 +139,15 @@
         <section class="clean-block clean-hero">
             <video autoplay muted loop id="video-background">
                 <!-- Default video for larger screens -->
-                <source src="./assets/img/Colorful Abstract  Ink Art Design Gallary Intro Video Background. (2).mp4" type="video/mp4" media="(min-width: 769px)">
+                <source src="./assets/img/Colorful Abstract Ink Art Design Gallery Intro Video Background (2).mp4" type="video/mp4">
                 <!-- Video for smaller screens (mobile) -->
-                <source src="./assets/img/Color Line Art.mp4" type="video/mp4" media="(max-width: 768px)">
+                <source class="mobileScreen" src="./assets/img/Color Line Art.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
-             
+            <div class="text-container">
+                <h1>Colour Art Line</h1>
+            </div>
         </section>
-        
-        
 
         
         <section>
