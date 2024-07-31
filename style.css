@@ -4,6 +4,47 @@
    
 }
 
+
+
+/* slider */
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  max-height: 500px; /* Adjust max-height as per your requirement */
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .carousel-item img {
+      max-height: 300px; /* Adjust for smaller screens */
+  }
+}
+@media (max-width: 576px) {
+  .carousel-item img {
+      max-height: 200px; /* Adjust for even smaller screens */
+  }
+}
+
+/*  */
+
+
+
+.whatsapp-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.whatsapp-chat img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+.whatsapp-chat img:hover {
+  transform: scale(1.1);
+}
+
+
 /* 
 .clean-block.clean-hero {
     color: var(--bs-border-color-translucent);
@@ -12,29 +53,34 @@
 .clean-block.clean-hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
-  overflow: hidden;
+  height: 100vh;  
+  overflow:  ;
+  color: var(--bs-border-color-translucent);
+  background: url("/assets/img/radium\ color\ ART\ HOME\ PAGE.png") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black; /* Fallback background color */
+   
+  background-position: center;  
+  background-repeat: no-repeat;  
 }
 
-#video-background {
+/* #video-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure video covers the section */
-  z-index: -1; /* Ensure video is behind the text */
-}
+  object-fit: cover;  
+  z-index: -1;  
+} */
+
 
 .text-container {
   position: relative;
   text-align: center;
   color: white;
-  z-index: 1; /* Ensure text is above the video */
+  z-index: 1; /* Ensure text is above the background image */
   padding: 0 20px; /* Add padding for better readability */
 }
 
@@ -43,7 +89,6 @@
   font-weight: bolder;
   margin: 0;
   padding: 0;
-  animation: fadeInUp 2s ease-out, bounce 2s infinite; /* Add animations */
   font-family: 'Kalnia Glaze', sans-serif; /* Apply the Kalnia Glaze font */
 }
 
@@ -71,22 +116,14 @@
   }
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  #video-background {
-      display: none; /* Hide desktop video on mobile */
-  }
+ 
 
   .text-container h1 {
       font-size: 6vw; /* Adjust font size for smaller screens */
   }
 }
 
-@media (min-width: 769px) {
-  .mobileScreen {
-      display: none; /* Hide mobile video on larger screens */
-  }
-}
+ 
 
 /*  */
 /* services css */
@@ -1222,5 +1259,26 @@ h2 {
   /*  */
 
 
-
- 
+/* button */
+  .custom-enquire-button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.custom-enquire-button a {
+    color: white;
+    text-decoration: none;
+}
+.custom-enquire-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
