@@ -1284,3 +1284,18 @@ h2 {
   margin-top: 30px;
 }
 
+
+
+/* seacrh input */
+
+.form-control-borderless {
+  border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/*  */
