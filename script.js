@@ -73,6 +73,13 @@ if (document.getElementsByClassName('clean-gallery').length > 0) {
                 // getBoundingClientReact gives us various information about the position of the element.
                 var dimentions = this.getBoundingClientRect();
 
+
+
+
+
+
+
+    
                 // Calculate the position of the cursor inside the element (in pixels).
                 var x = e.clientX - dimentions.left;
                 var y = e.clientY - dimentions.top;
@@ -106,44 +113,8 @@ if (document.getElementsByClassName('clean-gallery').length > 0) {
     }
 })(window);
 
-// 
  
-
-// contact form js 
-
-// document.getElementById('contact-form').addEventListener('submit', async (event) => {
-//     event.preventDefault();
-  
-//     const formData = {
-//       name: event.target.name.value,
-//       email: event.target.email.value,
-//       subject: event.target.subject.value,
-//       message: event.target.message.value
-//     };
-  
-//     try {
-//       const response = await fetch('/api/contacts', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify(formData)
-//       });
-  
-//       if (response.ok) {
-//         alert('Message sent successfully');
-//         event.target.reset();
-//       } else {
-//         alert('Failed to send message');
-//       }
-//     } catch (error) {
-//       console.error(error);
-//       alert('An error occurred');
-//     }
-//   });
-
-
-
-
-
+ 
   
   
 //   adding functionality to fetch and display gallery items 
@@ -171,3 +142,48 @@ if (document.getElementsByClassName('clean-gallery').length > 0) {
   document.addEventListener('DOMContentLoaded', fetchGalleryItems);
   
  
+
+
+//   SEARCH BUTTON IN GALLERY
+
+function searchGallery(event) {
+            event.preventDefault(); // Prevent form from submitting
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var items = document.getElementsByClassName('filtr-item');
+            var categories = {
+                'number plates': 1,
+                'name plate': 2,
+                'vinyl': 3,
+                'QR' : 4
+            };
+
+            // Check if the input is empty
+            if (!input) {
+                // Show all items if the search input is empty
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'block';
+                }
+                return;
+            }
+
+            var category = categories[input];
+
+            for (var i = 0; i < items.length; i++) {
+                var item = items[i];
+                var itemCategory = item.getAttribute('data-category');
+
+                if (itemCategory == category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        }
+
+        // Make the gallery responsive
+        document.addEventListener('DOMContentLoaded', function() {
+            var items = document.getElementsByClassName('filtr-item');
+            for (var i = 0; i < items.length; i++) {
+                items[i].classList.add('col-sm-6', 'col-md-4', 'col-lg-3');
+            }
+        });

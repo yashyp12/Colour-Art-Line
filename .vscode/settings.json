@@ -1,4 +1,6 @@
 {
     "liveServer.settings.port": 5501,
-    "editor.mouseWheelZoom": true
+    "editor.mouseWheelZoom": true,
+    "livePreview.customExternalBrowser": "Chrome",
+    "livePreview.openPreviewTarget": "External Browser"
 }

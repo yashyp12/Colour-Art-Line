@@ -3,8 +3,7 @@
 .navbar-collapse {
    
 }
-
-
+ 
 
 /* slider */
 .carousel-item img {
@@ -27,7 +26,7 @@
 /*  */
 
 
-
+/* whatapp chatbot css */
 .whatsapp-chat {
   position: fixed;
   bottom: 20px;
@@ -45,11 +44,14 @@
 }
 
 
-/* 
-.clean-block.clean-hero {
-    color: var(--bs-border-color-translucent);
-    background: url("/assets/img/g4931f5738e84a370e746fd961cd8985ffec6706cf8396dabf84098a533925e0675ababc75c84a280c36feaf0afa90d0cf4cbb5f5be333dc03d69b528bbf09b2d_640.jpg?h=505a01552beb0675f6158323d8dd4e41") center / cover no-repeat;
-} */
+
+/* gallery css */
+/*  */
+
+
+
+
+ 
 .clean-block.clean-hero {
   position: relative;
   width: 100%;
@@ -65,16 +67,7 @@
   background-repeat: no-repeat;  
 }
 
-/* #video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  
-  z-index: -1;  
-} */
-
+ 
 
 .text-container {
   position: relative;
@@ -125,7 +118,7 @@
 
  
 
-/*  */
+ 
 /* services css */
 .title-padding {
     padding-bottom: 20px;
@@ -1282,3 +1275,12 @@ h2 {
     background-color: #0056b3;
     transform: scale(1.05);
 }
+
+
+
+
+/* gallery */
+.photo-gallery {
+  margin-top: 30px;
+}
+
