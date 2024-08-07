@@ -1,10 +1,13 @@
 RewriteEngine On
 
-# Remove .html extension from URL
+# Redirect requests to clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [L]
+RewriteRule ^(index|contact|gallery|services|about)?$ $1.html [L]
 
-# Redirect .html URLs to clean URLs (optional, for SEO)
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html\sHTTP [NC]
+# Redirect .html URLs to clean URLs for SEO
+RewriteCond %{THE_REQUEST} \s/+([a-zA-Z0-9_-]+)\.html [NC]
 RewriteRule ^ %1 [R=301,L]
+
+# Redirect root to index.html
+RewriteRule ^$ /index.html [L]
